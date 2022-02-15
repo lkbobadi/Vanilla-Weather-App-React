@@ -1,38 +1,102 @@
-.App {
+.container {
+  padding-left: 0;
+  margin: 0 auto;
+}
+
+.weather-app {
+  background-color: #4d4d4d;
+  color: #fff;
+  width: 500px;
+  padding: 20px;
+  margin: 0 auto;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  list-style-type: none;
+  justify-content: space-evenly;
+  margin: 0 auto;
+}
+
+li {
+  margin: 0 35px 0 35px;
+  padding: 5px;
+}
+
+.search-weather {
+  text-align: center;
+  background-color: #5c5c5c;
+  padding: 10px;
+}
+
+#search {
+  text-align: left;
+  width: 80%;
+  border-radius: 15px 0 0 15px;
+  border: 1px solid #e2e2e2;
+  padding: 5px;
+}
+
+#submit {
+  border-radius: 0 15px 15px 0;
+  padding: 5px;
+  border: 1px solid #e2e2e2;
+  background-color: #e2e2e2;
+  color: #4d4d4d;
+}
+
+@media (max-width: 415px) {
+  .weather-app {
+    background-color: #4d4d4d;
+    color: #fff;
+    width: 350px;
+    padding: 10px;
+  }
+  #search {
+    width: 50%;
+  }
+}
+
+.main-information {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.celsius {
+  background-color: #e2e2e2;
+  border: 1px solid #e2e2e2;
+  border-radius: 20px 0 0 20px;
+  text-align: left;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.farenheit {
+  background-color: #e2e2e2;
+  border: 1px solid #e2e2e2;
+  border-radius: 0 20px 20px 0;
+  text-align: right;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.celsius:hover,
+.farenheit:hover {
+  background: #5c5c5c;
+  color: #e2e2e2;
+}
+
+.weather-extra-information {
+  width: 25%;
+  left: 50px;
+  top: -50px;
+  position: relative;
+}
+
+.weather-extra-information li {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  list-style-type: none;
+  font-size: 10px;
+  background-color: #000;
+  opacity: 0.5;
+  width: 100%;
+  text-align: center;
+  margin: 5px;
 }
