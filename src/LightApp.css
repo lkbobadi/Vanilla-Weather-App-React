@@ -1,3 +1,12 @@
+:root {
+  --main-light-background: #e5dcc3;
+  --search-bar: #ede7cf;
+  --accent: #d4ceb0;
+  --dark-information: #858171;
+  --button-color: #d4ceb0;
+  --dark-accent: #464239;
+}
+
 .container {
   padding-left: 0;
   margin: 0 auto;
@@ -5,8 +14,8 @@
 
 .weather-app {
   border-radius: 4px;
-  background-color: #4d4d4d;
-  color: #fff;
+  background-color: var(--main-light-background);
+  color: var(--dark-information);
   width: 500px;
   padding: 20px;
   margin: 0 auto;
@@ -28,33 +37,33 @@ li {
 
 .search-weather {
   text-align: center;
-  background-color: #5c5c5c;
+  background-color: var(--search-bar);
   padding: 10px;
 }
 
 #search {
   text-align: left;
   width: 80%;
-  border: 1px solid #e2e2e2;
+  border: 1px solid var(--search-bar);
   padding: 5px;
 }
 
 #submit {
   padding: 5px;
-  border: 1px solid #e2e2e2;
-  background-color: #e2e2e2;
-  color: #4d4d4d;
+  border: 1px solid var(--button-color);
+  background-color: var(--button-color);
+  color: #fff;
   transition: 300ms all ease-in-out;
 }
 
 #submit:hover {
-  background-color: #4b4646;
+  background-color: var(--dark-information);
   color: #fff;
 }
 
 @media (max-width: 415px) {
   .weather-app {
-    background-color: #4d4d4d;
+    background-color: var(--dark-information);
     color: #fff;
     width: 350px;
     padding: 10px;
@@ -69,27 +78,29 @@ li {
 }
 
 .celsius {
-  background-color: #e2e2e2;
-  border: 1px solid #e2e2e2;
+  background-color: var(--dark-accent);
+  border: 1px solid var(--dark-accent);
+  color: #fff;
   border-radius: 20px 0 0 20px;
   text-align: left;
 }
 
 .farenheit {
-  background-color: #e2e2e2;
-  border: 1px solid #e2e2e2;
+  background-color: var(--dark-accent);
+  border: 1px solid var(--dark-accent);
+  color: #fff;
   border-radius: 0 20px 20px 0;
   text-align: right;
 }
 
 .celsius:hover,
 .farenheit:hover {
-  background: #5c5c5c;
-  color: #e2e2e2;
+  background: #9b9589;
+  color: var(--main-light-background);
 }
 
 .temperature {
-  color: #fff;
+  color: var(--dark-information);
   font-size: 30px;
 }
 
@@ -107,7 +118,7 @@ li {
   list-style-type: none;
   font-size: 10px;
   background-color: #000;
-  opacity: 0.5;
+  opacity: 0.7;
   width: 100%;
   text-align: center;
   margin: 5px;
@@ -119,10 +130,10 @@ li {
 }
 
 .footer {
-  background-color: #cfcfcf;
+  background-color: var(--dark-accent);
   font-size: 12px;
   padding: 5px;
-  color: #252525;
+  color: #fff;
   text-align: center;
   margin: 0 auto;
 }

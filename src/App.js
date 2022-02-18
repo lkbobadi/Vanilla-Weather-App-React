@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 
 export default function App() {
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState("New York");
   const [loaded, setLoaded] = useState(false);
   const [weatherData, setWeatherData] = useState({});
 
@@ -111,6 +111,32 @@ export default function App() {
               onClick={submitCity}
             />
           </form>
+
+          <div className='row'>
+            <ul className='today-extra-info col-1'>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+          <div className='main-information'>
+            <h1 className='city'>{city}</h1>
+            <div className='icon'>{setWeatherData.icon}</div>
+            <div className='temperature'></div>
+            <div className='button-set'>
+              <button className='celsius'>C</button>
+              <button className='farenheit'>F</button>
+            </div>
+          </div>
+          <div className='weather-extra-information  mb-5'>
+            <li>Country: </li>
+            <li>Humidity: </li>
+            <li>Wind: </li>
+          </div>
+
+          <div className='footer'>
+            Open-Source by <span>Laura Bobadilla</span>
+          </div>
         </div>
       </div>
     );
