@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import FormattedWeather from "./FormattedWeather";
+import FormattedTime from "./FormattedTime";
 import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 
@@ -10,7 +11,6 @@ export default function App() {
   const [weatherData, setWeatherData] = useState({});
 
   function getWeather(response) {
-    setLoaded(true);
     setWeatherData({
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
@@ -21,6 +21,7 @@ export default function App() {
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       date: new Date(response.data.dt * 1000),
     });
+    setLoaded(true);
   }
 
   function updateCity(e) {
@@ -59,10 +60,12 @@ export default function App() {
           <div className='row'>
             <ul className='today-extra-info col-1'>
               <li>
-                <FormattedWeather date={weatherData.data} />
+                <FormattedWeather date={weatherData.date} />
               </li>
               <li>{weatherData.description}</li>
-              <li>3:40PM</li>
+              <li>
+                <FormattedTime date={weatherData.date} />
+              </li>
             </ul>
           </div>
           <div className='main-information'>

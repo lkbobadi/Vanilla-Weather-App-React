@@ -1,4 +1,5 @@
 .container {
+  border-radius: 4px;
   padding-left: 0;
   margin: 0 auto;
 }
@@ -34,13 +35,11 @@ li {
 #search {
   text-align: left;
   width: 80%;
-  border-radius: 15px 0 0 15px;
   border: 1px solid #e2e2e2;
   padding: 5px;
 }
 
 #submit {
-  border-radius: 0 15px 15px 0;
   padding: 5px;
   border: 1px solid #e2e2e2;
   background-color: #e2e2e2;
