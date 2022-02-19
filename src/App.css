@@ -1,8 +1,6 @@
 .container {
-  padding-left: 0;
-  margin: 0 auto;
+  padding: 0;
 }
-
 .weather-app {
   border-radius: 4px;
   background-color: #4d4d4d;
@@ -57,7 +55,6 @@ li {
     background-color: #4d4d4d;
     color: #fff;
     width: 350px;
-    padding: 10px;
   }
   #search {
     width: 50%;
