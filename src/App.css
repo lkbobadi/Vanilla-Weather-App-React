@@ -127,3 +127,14 @@ li {
   text-align: center;
   margin: 0 auto;
 }
+
+span a {
+  text-decoration: none;
+  color: #252525;
+  font-weight: bold;
+  transition: 200ms all ease-in-out;
+}
+
+span a:hover {
+  color: #705f5f;
+}

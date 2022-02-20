@@ -42,7 +42,7 @@ export default function App() {
   if (loaded) {
     return (
       <div className='container mx-auto'>
-        <div class='row g-0 '>
+        <div class='row g-0 mx-auto'>
           <div className='weather-app mt-3'>
             <form className='search-weather' onSubmit={submitCity}>
               <input
@@ -84,7 +84,12 @@ export default function App() {
             </div>
 
             <div className='footer'>
-              Open-Source by <span>Laura Bobadilla</span>
+              Open-Source by{" "}
+              <span>
+                <a href='https://github.com/lkbobadi/Vanilla-Weather-App-React'>
+                  Laura Bobadilla
+                </a>
+              </span>
             </div>
           </div>
         </div>
