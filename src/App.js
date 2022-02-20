@@ -4,7 +4,6 @@ import FormattedWeather from "./FormattedWeather";
 import FormattedTime from "./FormattedTime";
 import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
-import { eventWrapper } from "@testing-library/user-event/dist/utils";
 
 export default function App() {
   const [city, setCity] = useState("New York");
@@ -42,8 +41,8 @@ export default function App() {
 
   if (loaded) {
     return (
-      <div className='container'>
-        <div class='g-0'>
+      <div className='container mx-auto'>
+        <div class='row g-0 '>
           <div className='weather-app mt-3'>
             <form className='search-weather' onSubmit={submitCity}>
               <input
@@ -92,7 +91,7 @@ export default function App() {
       </div>
     );
   } else {
-    submitCity();
+    search();
     return "Loading...";
   }
 }

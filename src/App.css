@@ -1,6 +1,10 @@
 .container {
   padding: 0;
 }
+
+.row {
+  max-width: 500px;
+}
 .weather-app {
   border-radius: 4px;
   background-color: #4d4d4d;
