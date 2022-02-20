@@ -78,6 +78,7 @@ export default function App() {
                 <CelsiusFarenheitSet celsius={weatherData.temperature} />
               </div>
             </div>
+
             <div className='weather-extra-information  mb-5'>
               <li>Country: {weatherData.country}</li>
               <li>Humidity: {weatherData.humidity}%</li>
