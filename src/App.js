@@ -2,6 +2,8 @@ import "./App.css";
 import React, { useState } from "react";
 import FormattedWeather from "./FormattedWeather";
 import FormattedTime from "./FormattedTime";
+import WeatherIcon from "./WeatherIcon";
+import CelsiusFarenheitSet from "./CelsiusFarenheitSet";
 import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 
@@ -18,7 +20,7 @@ export default function App() {
       humidity: response.data.main.humidity,
       description: response.data.weather[0].main,
       country: response.data.sys.country,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       date: new Date(response.data.dt * 1000),
     });
     setLoaded(true);
@@ -67,14 +69,13 @@ export default function App() {
             <div className='main-information'>
               <h1 className='city'>{city}</h1>
               <div className='icon'>
-                <img src={weatherData.icon} alt={weatherData.description} />
+                <WeatherIcon
+                  code={weatherData.icon}
+                  alt={weatherData.description}
+                />
               </div>
               <div className='temperature'>
-                {Math.round(weatherData.temperature)}°C
-              </div>
-              <div className='button-set'>
-                <button className='celsius'>C</button>
-                <button className='farenheit'>F</button>
+                <CelsiusFarenheitSet celsius={weatherData.temperature} />
               </div>
             </div>
             <div className='weather-extra-information  mb-5'>
