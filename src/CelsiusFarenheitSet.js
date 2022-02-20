@@ -26,7 +26,7 @@ export default function CelsiusFarenheitSet(props) {
     </div>
   );
 
-  if (unit == "metrics") {
+  if (unit === "metrics") {
     return (
       <div>
         <div className='temperature'>
