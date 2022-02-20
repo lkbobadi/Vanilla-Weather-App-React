@@ -137,3 +137,28 @@ li {
   text-align: center;
   margin: 0 auto;
 }
+
+.WeatherForecast {
+  opacity: 0.7;
+  position: relative;
+
+  padding: 25px;
+  height: 150px;
+}
+
+.day {
+  margin: 0 auto;
+  text-align: center;
+  background: #000;
+  margin-left: 5px;
+  padding: 10px;
+  width: 100px;
+}
+
+.temp-maxmin {
+  font-size: 12px;
+}
+
+.temp-min {
+  opacity: 0.5;
+}

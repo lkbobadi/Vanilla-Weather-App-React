@@ -4,6 +4,8 @@ import FormattedWeather from "./FormattedWeather";
 import FormattedTime from "./FormattedTime";
 import WeatherIcon from "./WeatherIcon";
 import CelsiusFarenheitSet from "./CelsiusFarenheitSet";
+import WeatherForecast from "./WeatherForecast";
+import Footer from "./Footer";
 import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 
@@ -69,30 +71,20 @@ export default function App() {
             <div className='main-information'>
               <h1 className='city'>{city}</h1>
               <div className='icon'>
-                <WeatherIcon
-                  code={weatherData.icon}
-                  alt={weatherData.description}
-                />
+                <WeatherIcon code={weatherData.icon} size={80} />
               </div>
               <div className='temperature'>
                 <CelsiusFarenheitSet celsius={weatherData.temperature} />
               </div>
             </div>
-
+            <WeatherForecast />
             <div className='weather-extra-information  mb-5'>
               <li>Country: {weatherData.country}</li>
               <li>Humidity: {weatherData.humidity}%</li>
               <li>Wind: {Math.round(weatherData.wind)} km/h</li>
             </div>
 
-            <div className='footer'>
-              Open-Source by{" "}
-              <span>
-                <a href='https://github.com/lkbobadi/Vanilla-Weather-App-React'>
-                  Laura Bobadilla
-                </a>
-              </span>
-            </div>
+            <Footer />
           </div>
         </div>
       </div>
