@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
-import FormattedWeather from "./FormattedWeather";
+import FormattedDay from "./FormattedDay";
 import FormattedTime from "./FormattedTime";
 import WeatherIcon from "./WeatherIcon";
 import CelsiusFarenheitSet from "./CelsiusFarenheitSet";
@@ -16,6 +16,7 @@ export default function App() {
 
   function getWeather(response) {
     setWeatherData({
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
       wind: response.data.wind.speed,
       city: response.data.name,
@@ -60,7 +61,7 @@ export default function App() {
             <div className='row'>
               <ul className='today-extra-info col-1'>
                 <li>
-                  <FormattedWeather date={weatherData.date} />
+                  <FormattedDay date={weatherData.date} />
                 </li>
                 <li>{weatherData.description}</li>
                 <li>
@@ -77,7 +78,7 @@ export default function App() {
                 <CelsiusFarenheitSet celsius={weatherData.temperature} />
               </div>
             </div>
-            <WeatherForecast />
+            <WeatherForecast coordinates={weatherData.coordinates} />
             <div className='weather-extra-information  mb-5'>
               <li>Country: {weatherData.country}</li>
               <li>Humidity: {weatherData.humidity}%</li>
