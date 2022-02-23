@@ -14,15 +14,13 @@ export default function WeatherForecast(props) {
 
   if (loaded) {
     return (
-      <div className='WeatherForecast'>
-        <div className='row'>
-          <WeatherForecastDay data={forecast[0]} />
-        </div>
+      <div className='row'>
+        <WeatherForecastDay data={forecast[0]} />
       </div>
     );
   } else {
     let apiKey = "094780c710fa4efd669f0df8c3991927";
-    let units = "metric";
+    let units = "metrics";
     let longitude = props.coordinates.lon;
     let latitude = props.coordinates.lat;
     let apiUrl = ` https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}}&appid=${apiKey}&units=${units}`;

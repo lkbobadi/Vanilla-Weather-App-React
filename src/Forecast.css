@@ -1,7 +1,6 @@
 .WeatherForecast {
   opacity: 0.7;
   position: relative;
-  background: #fff;
   padding: 25px;
   height: 150px;
 }

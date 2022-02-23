@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import FormattedDay from "./FormattedDay";
 import FormattedTime from "./FormattedTime";
 import WeatherIcon from "./WeatherIcon";
-import CelsiusFarenheitSet from "./CelsiusFarenheitSet";
 import WeatherForecast from "./WeatherForecast";
+import CelsiusFarenheitSet from "./CelsiusFarenheitSet";
 import Footer from "./Footer";
 import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
@@ -40,14 +40,14 @@ export default function App() {
     let apiKey = "094780c710fa4efd669f0df8c3991927";
     let units = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-
+    console.log(apiUrl);
     axios.get(apiUrl).then(getWeather);
   }
 
   if (loaded) {
     return (
       <div className='container mx-auto'>
-        <div class='row g-0 mx-auto'>
+        <div className='row g-0 mx-auto'>
           <div className='weather-app mt-3'>
             <form className='search-weather' onSubmit={submitCity}>
               <input
@@ -78,7 +78,11 @@ export default function App() {
                 <CelsiusFarenheitSet celsius={weatherData.temperature} />
               </div>
             </div>
-            <WeatherForecast coordinates={weatherData.coordinates} />
+            <div className='WeatherForecast'>
+              <div className='day col-2'>
+                <WeatherForecast coordinates={weatherData.coordinates} />
+              </div>
+            </div>
             <div className='weather-extra-information  mb-5'>
               <li>Country: {weatherData.country}</li>
               <li>Humidity: {weatherData.humidity}%</li>
