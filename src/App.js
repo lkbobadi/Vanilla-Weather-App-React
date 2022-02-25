@@ -79,9 +79,7 @@ export default function App() {
               </div>
             </div>
             <div className='WeatherForecast'>
-              <div className='day col-2'>
-                <WeatherForecast coordinates={weatherData.coordinates} />
-              </div>
+              <WeatherForecast coordinates={weatherData.coordinates} />
             </div>
             <div className='weather-extra-information  mb-5'>
               <li>Country: {weatherData.country}</li>
